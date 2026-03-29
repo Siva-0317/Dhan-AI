@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { sendChat } from "@/lib/api";
+import { sendChat, sendFollowUp } from "@/lib/api";
 import ChatBubble from "@/components/ChatBubble";
 import { Send, LayoutDashboard, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -57,13 +57,12 @@ export default function ChatPage() {
     setIsLoading(true);
     
     try {
+      // Pull the already-computed financial profile from session cache
       const cachedStateStr = sessionStorage.getItem("dhan_i_state");
-      const currentState = cachedStateStr ? JSON.parse(cachedStateStr).full_state : {};
+      const cachedState = cachedStateStr ? JSON.parse(cachedStateStr).full_state : {};
       
-      const res = await sendChat(query, currentState);
-      
-      // Update cache
-      sessionStorage.setItem("dhan_i_state", JSON.stringify(res));
+      // Use the lightweight /followup endpoint — does NOT re-run the 4-agent pipeline
+      const res = await sendFollowUp(query, cachedState);
       
       setMessages(prev => [...prev, {role: "assistant", content: res.final_response}]);
     } catch(err) {
