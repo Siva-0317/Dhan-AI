@@ -12,7 +12,7 @@ export default function Home() {
       >
         <div className="space-y-4">
           <h1 className="text-6xl font-black bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
-            Dhan-I
+            Dhan-AI
           </h1>
           <p className="text-neutral-400 text-lg">
             Your AI-Powered Cognitive Financial Twin. Drop your bank statement to discover your Financial Independence path.

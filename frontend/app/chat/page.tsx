@@ -131,7 +131,7 @@ export default function ChatPage() {
   return (
     <div className="flex flex-col h-screen bg-neutral-900 text-neutral-100 font-sans">
       <header className="p-4 bg-neutral-950 border-b border-neutral-800 flex justify-between items-center z-10">
-        <h1 className="text-2xl font-black bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">Dhan-I</h1>
+        <h1 className="text-2xl font-black bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">Dhan-AI</h1>
         <button
           onClick={() => router.push("/dashboard")}
           className="flex items-center space-x-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:opacity-90 px-4 py-2 rounded-lg font-medium transition shadow-lg shadow-emerald-900/40"

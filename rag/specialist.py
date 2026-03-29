@@ -35,7 +35,7 @@ def rag_agent(state: AgentState) -> dict:
     else:
         context_string = "\n\n".join(retrieved_docs)
         
-    system_prompt = f"""You are a personal finance assistant for the app Dhan-I. 
+    system_prompt = f"""You are a personal finance assistant for the app Dhan-AI. 
 Your primary goal is to answer the user's question USING ONLY the provided context. 
 If the context doesn't contain the answer, warmly say you don't know based on the current knowledge.
 
