@@ -1,5 +1,6 @@
 fastapi
 python-multipart
+PyPDF2
 uvicorn
 langgraph
 langchain
