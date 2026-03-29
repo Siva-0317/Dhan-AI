@@ -17,7 +17,7 @@ class ChatRequest(BaseModel):
 @router.post("/chat")
 async def chat_endpoint(request: ChatRequest):
     """
-    Core entry point for Dhan-I. Takes the user's natural language query and context,
+    Core entry point for Dhan-AI. Takes the user's natural language query and context,
     channels it through the full pipeline (Detective -> Fortune Teller -> RAG -> Roadmap).
     """
     # Fetch safe defaults via factory dict
@@ -78,7 +78,7 @@ async def followup_endpoint(request: FollowUpRequest):
     except Exception:
         rag_context = "No specific knowledge found."
 
-    system_prompt = f"""You are Dhan-I, a personal Indian finance coach. You already know this person well:
+    system_prompt = f"""You are Dhan-AI, a personal Indian finance coach. You already know this person well:
 - Their financial persona: {persona}
 - Their FIRE target corpus: Rs.{fi_number:,.0f}
 - Monte Carlo success probability: {success_rate:.1f}%
